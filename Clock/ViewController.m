@@ -9,15 +9,20 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+{
+    NSDate* dateAndTime;
 
+}
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad
 {
+    dateAndTime = [NSDate date];
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	NSLog (@"Today's date and time: %@", dateAndTime);
 }
 
 - (void)didReceiveMemoryWarning
