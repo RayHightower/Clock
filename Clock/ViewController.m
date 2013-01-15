@@ -13,11 +13,12 @@
     NSDate* dateAndTime;
     IBOutlet UILabel* dateAndTimeLabel;
     NSTimeZone* timeZone;
+    NSCalendar* sampleCalendar;
 }
+
 @end
 
 @implementation ViewController
-
 
 
 - (void)viewDidLoad
@@ -35,10 +36,12 @@
     NSLog (@"timeZone = %@", timeZone);
 
     NSLog (@"timeZoneNames = %@", timeZoneNames);
+    NSLog (@"sampleCalendar = %@", sampleCalendar);
 
 	NSLog (@"dateAndTimeLabel = %@", dateAndTimeLabel.text);
 
 }
+
 
 - (void)didReceiveMemoryWarning
 {
