@@ -12,34 +12,31 @@
 {
     NSDate* dateAndTime;
     IBOutlet UILabel* dateAndTimeLabel;
-
+    NSTimeZone* timeZone;
 }
 @end
 
 @implementation ViewController
 
--(IBAction)show:(id)sender
-    {
-        ViewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
-        
-        //    myViewController.labelText = myTextField.text;
-        [myViewController setTheText:myTextField.text];
-        [self.view addSubview:myViewController.view];
-    }
-    
--(IBAction)pushed:(id)sender
-    {
-        myLabel.text = myTextField.text;
-        [myLabel setText:[myTextField text]];
-    }
-    
+
 
 - (void)viewDidLoad
 {
     dateAndTime = [NSDate date];
+    dateAndTimeLabel.text = @"12:01pm";      // [NSDate date];
+    // timeZone = [NSTimeZone timeZoneWithName];
+    
+    NSArray *timeZoneNames = [NSTimeZone knownTimeZoneNames];
+    
     
     [super viewDidLoad];
-	NSLog (@"Today's date and time: %@", dateAndTime);  // Yes, we know the date & time.
+	
+    NSLog (@"dateAndTime = %@", dateAndTime);  // Yes, we know the date & time.
+    NSLog (@"timeZone = %@", timeZone);
+
+    NSLog (@"timeZoneNames = %@", timeZoneNames);
+
+	NSLog (@"dateAndTimeLabel = %@", dateAndTimeLabel.text);
 
 }
 
