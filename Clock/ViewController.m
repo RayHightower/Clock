@@ -21,23 +21,67 @@
 @implementation ViewController
 @synthesize showCurrentTime;
 
-- (void)viewDidLoad
-{
+
+- (IBAction)getCurrentTime:(id)sender {
+// manually update the time when button is pushed
+    
     // NSDateFormatter courtesy of Stack Overflow
+    // Repeating this violates DRY!!!
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     [formatter setDateStyle:NSDateFormatterNoStyle];
     [formatter setTimeStyle:NSDateFormatterLongStyle];
     NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
     
+    // First, get the time
+    NSLog (@"dateAndTime = %@", stringVersionOfDate);  // so we can display it.
+    
+    // showCurrentTime.text = dateAndTime;        // gotta cast this as a string.
     showCurrentTime.text = stringVersionOfDate;
+}
+
+-(void)updateTimeWindow {
+// automatically update the time every second
+    
+    // NSDateFormatter courtesy of Stack Overflow
+    // Repeating this violates DRY!!!
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [formatter setDateStyle:NSDateFormatterNoStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
+    
+    // First, get the time
+    NSLog (@"dateAndTime = %@", stringVersionOfDate);  // so we can display it.
+    
+    // showCurrentTime.text = dateAndTime;        // gotta cast this as a string.
+    showCurrentTime.text = stringVersionOfDate;
+
+    // call getCurrentTime again every second
+    [self performSelector:@selector(updateTimeWindow) withObject:self afterDelay:1.0];
+
+}
+
+- (void)viewDidLoad
+{
+    /*  NSDateFormatter courtesy of Stack Overflow
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [formatter setDateStyle:NSDateFormatterNoStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
+    */
+    
+    // showCurrentTime.text = stringVersionOfDate;
+    showCurrentTime.text = @"Time Window...";
     
     [super viewDidLoad];
 	
     NSLog (@"dateAndTime = %@", dateAndTime);  // Yes, we know the date & time.
-
 	NSLog (@"dateAndTimeLabel = %@", dateAndTimeLabel.text);
 
+    [self updateTimeWindow];      // Let's go get the time, and keep getting it.
+    
 }
 
 
@@ -67,23 +111,5 @@
 
 }
 
-- (IBAction)getCurrentTime:(id)sender {
-
-    // NSDateFormatter courtesy of Stack Overflow
-    // Repeating this violates DRY!!!
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    [formatter setDateStyle:NSDateFormatterNoStyle];
-    [formatter setTimeStyle:NSDateFormatterLongStyle];
-    NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
-
-                                                        // First, get the time
-    NSLog (@"dateAndTime = %@", stringVersionOfDate);  // so we can display it.
-
-    // showCurrentTime.text = dateAndTime;        // gotta cast this as a string.
-    showCurrentTime.text = stringVersionOfDate;
-
-    
-}
 
 @end
