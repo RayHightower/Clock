@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F3DDE5216A8C38F00B5C8E7 /* tzViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F3DDE5016A8C38F00B5C8E7 /* tzViewController.m */; };
+		6F3DDE5316A8C38F00B5C8E7 /* tzViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F3DDE5116A8C38F00B5C8E7 /* tzViewController.xib */; };
 		6FFF2DB516A5F7CA00274B02 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFF2DB416A5F7CA00274B02 /* UIKit.framework */; };
 		6FFF2DB716A5F7CA00274B02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFF2DB616A5F7CA00274B02 /* Foundation.framework */; };
 		6FFF2DB916A5F7CA00274B02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FFF2DB816A5F7CA00274B02 /* CoreGraphics.framework */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F3DDE4F16A8C38F00B5C8E7 /* tzViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tzViewController.h; sourceTree = "<group>"; };
+		6F3DDE5016A8C38F00B5C8E7 /* tzViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tzViewController.m; sourceTree = "<group>"; };
+		6F3DDE5116A8C38F00B5C8E7 /* tzViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tzViewController.xib; sourceTree = "<group>"; };
 		6FFF2DB016A5F7CA00274B02 /* Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FFF2DB416A5F7CA00274B02 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6FFF2DB616A5F7CA00274B02 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +94,9 @@
 				6FFF2DCD16A5F7CA00274B02 /* ViewController.m */,
 				6FFF2DCF16A5F7CA00274B02 /* ViewController.xib */,
 				6FFF2DBB16A5F7CA00274B02 /* Supporting Files */,
+				6F3DDE4F16A8C38F00B5C8E7 /* tzViewController.h */,
+				6F3DDE5016A8C38F00B5C8E7 /* tzViewController.m */,
+				6F3DDE5116A8C38F00B5C8E7 /* tzViewController.xib */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 				6FFF2DC916A5F7CA00274B02 /* Default@2x.png in Resources */,
 				6FFF2DCB16A5F7CA00274B02 /* Default-568h@2x.png in Resources */,
 				6FFF2DD116A5F7CA00274B02 /* ViewController.xib in Resources */,
+				6F3DDE5316A8C38F00B5C8E7 /* tzViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,7 @@
 				6FFF2DC116A5F7CA00274B02 /* main.m in Sources */,
 				6FFF2DC516A5F7CA00274B02 /* AppDelegate.m in Sources */,
 				6FFF2DCE16A5F7CA00274B02 /* ViewController.m in Sources */,
+				6F3DDE5216A8C38F00B5C8E7 /* tzViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +302,7 @@
 				6FFF2DD616A5F7CA00274B02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

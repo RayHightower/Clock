@@ -19,7 +19,7 @@
 @end
 
 @implementation ViewController
-@synthesize showCurrentTime;
+@synthesize showCurrentTime;        // Is this an instance variable? Better solution?
 
 
 
