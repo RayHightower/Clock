@@ -42,6 +42,9 @@
 }
 
 - (IBAction)changeTimeZone:(id)sender {
+    
+    NSLog(@"Now changing the time zone...");
+    showCurrentTime.text = @"NEW Time Zone...";
 }
 
 -(void)updateTimeWindow {
