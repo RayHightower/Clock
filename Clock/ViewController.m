@@ -22,6 +22,7 @@
 @synthesize showCurrentTime;
 
 
+
 - (IBAction)getCurrentTime:(id)sender {
 // manually update the time when button is pushed
     
@@ -40,6 +41,9 @@
     showCurrentTime.text = stringVersionOfDate;
 }
 
+- (IBAction)changeTimeZone:(id)sender {
+}
+
 -(void)updateTimeWindow {
 // automatically update the time every second
     
@@ -51,8 +55,13 @@
     [formatter setTimeStyle:NSDateFormatterLongStyle];
     NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
     
+    // Change the time zone
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Europe/Budapest"]];
+    
     // First, get the time
     NSLog (@"dateAndTime = %@", stringVersionOfDate);  // so we can display it.
+    NSLog (@"Time zone = %@", [formatter timeZone]);  // so we can display it.
+    
     
     // showCurrentTime.text = dateAndTime;        // gotta cast this as a string.
     showCurrentTime.text = stringVersionOfDate;
