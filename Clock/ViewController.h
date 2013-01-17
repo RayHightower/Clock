@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *showCurrentTime;
 
 - (IBAction)changeBackgroundColor:(id)sender;
+
+- (IBAction)resetBackgroundColor:(id)sender;
+
+- (IBAction)getCurrentTime:(id)sender;
 
 @end

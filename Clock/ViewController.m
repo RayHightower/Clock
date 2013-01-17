@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <time.h>
 
 @interface ViewController ()
 {
@@ -14,6 +15,9 @@
     IBOutlet UILabel* dateAndTimeLabel;
     NSTimeZone* timeZone;
     NSCalendar* sampleCalendar;
+    UIView* currentView;
+
+    
 }
 
 @end
@@ -23,13 +27,16 @@
 
 - (void)viewDidLoad
 {
-    dateAndTime = [NSDate date];
-    dateAndTimeLabel.text = @"12:01pm";      // [NSDate date];
-    // timeZone = [NSTimeZone timeZoneWithName];
     
-    // NSArray *timeZoneNames = [NSTimeZone knownTimeZoneNames];
+    // NSDateFormatter courtesy of Stack Overflow
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [formatter setDateStyle:NSDateFormatterNoStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
     
-    showCurrentTime.text = @"January 15, 2013 at 19:28";
+    
+    showCurrentTime.text = stringVersionOfDate;
     
     [super viewDidLoad];
 	
@@ -53,6 +60,40 @@
 - (IBAction)changeBackgroundColor:(id)sender {
     NSLog(@"Changing the background color.");
     
+    currentView = [self view];
+    NSLog (@"current class = %@", [self class]);
+    NSLog (@"current backgroundColor = %@", [currentView backgroundColor]);
+    
+    // [currentView backgroundColor] = [UIColor orangeColor];
+    // dots on the left. Brackets on the right. Amirite???
+    currentView.backgroundColor = [UIColor redColor];
+    
     
 }
+
+- (IBAction)resetBackgroundColor:(id)sender {
+
+    currentView.backgroundColor = [UIColor grayColor];
+
+}
+
+- (IBAction)getCurrentTime:(id)sender {
+
+    // NSDateFormatter courtesy of Stack Overflow
+    // Repeating this violates DRY!!!
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [formatter setDateStyle:NSDateFormatterNoStyle];
+    [formatter setTimeStyle:NSDateFormatterLongStyle];
+    NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
+
+                                                        // First, get the time
+    NSLog (@"dateAndTime = %@", stringVersionOfDate);  // so we can display it.
+
+    // showCurrentTime.text = dateAndTime;        // gotta cast this as a string.
+    showCurrentTime.text = stringVersionOfDate;
+
+    
+}
+
 @end
