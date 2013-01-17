@@ -13,11 +13,7 @@
 {
     NSDate* dateAndTime;
     IBOutlet UILabel* dateAndTimeLabel;
-    NSTimeZone* timeZone;
-    NSCalendar* sampleCalendar;
     UIView* currentView;
-
-    
 }
 
 @end
@@ -27,7 +23,6 @@
 
 - (void)viewDidLoad
 {
-    
     // NSDateFormatter courtesy of Stack Overflow
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
@@ -35,16 +30,11 @@
     [formatter setTimeStyle:NSDateFormatterLongStyle];
     NSString *stringVersionOfDate = [formatter stringFromDate:[NSDate date]];
     
-    
     showCurrentTime.text = stringVersionOfDate;
     
     [super viewDidLoad];
 	
     NSLog (@"dateAndTime = %@", dateAndTime);  // Yes, we know the date & time.
-    NSLog (@"timeZone = %@", timeZone);
-
-    // NSLog (@"timeZoneNames = %@", timeZoneNames);
-    NSLog (@"sampleCalendar = %@", sampleCalendar);
 
 	NSLog (@"dateAndTimeLabel = %@", dateAndTimeLabel.text);
 
